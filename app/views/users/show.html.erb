@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to users_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_user_path(@user), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show user</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <% if @user.public_email %>
+    <dt>Email:</dt>
+    <dd><%= @user.email %></dd>
+  <% else %>
+    <dt>Email Unavailable:</dt>
+    <dd><%= link_to 'Request Communication', '#', class: 'btn btn-default btn-xs' %></dd>
+  <% end %>
+
+  <dt>Name:</dt>
+  <dd>
+    <% if @user.first_name || @user.last_name %>
+      <%= "#{ @user.first_name } #{ @user.last_name }".strip %>
+    <% else %>
+      No name provided.
+    <% end %>
+  </dd>
+
+  <dt>Password:</dt>
+  <dd><%= @user.password %></dd>
+
+  <dt>Username:</dt>
+  <dd><%= @user.username %></dd>
+
+  <dt>Bio:</dt>
+  <dd><%= @user.bio %></dd>
+
+  <dt>Website:</dt>
+  <dd><%= @user.website %></dd>
+
+</dl>

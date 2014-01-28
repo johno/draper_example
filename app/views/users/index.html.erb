@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_user_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New User
+  <% end %>
+  <h1>Listing users</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Username</th>
+            <th>Bio</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Website</th>
+            <th>Public email</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @users) do |user| %>
+            <td><%= user.email %></td>
+            <td><%= user.password %></td>
+            <td><%= user.username %></td>
+            <td><%= user.bio %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.website %></td>
+            <td><%= user.public_email %></td>
+            <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

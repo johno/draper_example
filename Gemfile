@@ -32,6 +32,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
+
+gem 'email_format'
+gem 'url_format'
+
+gem 'font-awesome-rails'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'bootstrap-generators', '~> 3.0.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
