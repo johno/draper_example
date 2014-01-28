@@ -28,6 +28,9 @@
     <% end %>
   </dd>
 
+  <dt>Joined:</dt>
+  <dd><%= @user.created_at.strftime("%A, %B %e") %></dd>
+
   <dt>Password:</dt>
   <dd><%= @user.password %></dd>
 

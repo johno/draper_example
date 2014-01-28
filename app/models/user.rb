@@ -15,15 +15,15 @@ class User < ActiveRecord::Base
 
   def fullname
     if first_name.blank? && last_name.blank?
-      "#{ first_name } #{ last_name }".strip
-    else
       'No name provided.'
+    else
+      "#{ first_name } #{ last_name }".strip
     end
   end
 
   def as_json(options = {})
     json_blob = super
-    json_blob.delete(:email) if private_email
+    json_blob.delete(:email) unless public_email
     json_blob
   end
 

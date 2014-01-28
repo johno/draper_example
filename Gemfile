@@ -41,6 +41,7 @@ end
 gem 'email_format'
 gem 'url_format'
 
+gem 'draper'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-generators', '~> 3.0.2'
