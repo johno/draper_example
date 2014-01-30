@@ -17,10 +17,4 @@ class UserDecorator < Draper::Decorator
   def joined_at
     created_at.strftime("%B %Y")
   end
-
-  def as_json(options = {})
-    json_blob = super
-    json_blob.delete(:email) unless public_email
-    json_blob
-  end
 end
