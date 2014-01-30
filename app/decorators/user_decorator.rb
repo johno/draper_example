@@ -12,7 +12,6 @@ class UserDecorator < Draper::Decorator
       "#{ first_name } #{ last_name }".strip
     end
   end
-  alias_method :fullname, :full_name
 
   def joined_at
     created_at.strftime("%B %Y")

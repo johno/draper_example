@@ -15,14 +15,14 @@ describe UserDecorator do
       before { user.first_name = '' }
 
       it 'should return the last name' do
-        expect(decorator.fullname).to eq(last_name)
+        expect(decorator.full_name).to eq(last_name)
       end
     end
 
     context 'with a first and last name' do
 
       it 'should return the full name' do
-        expect(decorator.fullname).to eq("#{ first_name } #{ last_name }")
+        expect(decorator.full_name).to eq("#{ first_name } #{ last_name }")
       end
     end
 
@@ -34,7 +34,7 @@ describe UserDecorator do
       end
 
       it 'should return no name provided' do
-        expect(decorator.fullname).to eq('No name provided.')
+        expect(decorator.full_name).to eq('No name provided.')
       end
     end
   end
