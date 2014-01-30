@@ -11,25 +11,14 @@
 </div>
 
 <dl class="dl-horizontal">
-  <% if @user.public_email %>
-    <dt>Email:</dt>
-    <dd><%= @user.email %></dd>
-  <% else %>
-    <dt>Email Unavailable:</dt>
-    <dd><%= link_to 'Request Communication', '#', class: 'btn btn-default btn-xs' %></dd>
-  <% end %>
+  <dt>Email:</dt>
+  <dd><%= @user.email_or_request_button %></dd>
 
   <dt>Name:</dt>
-  <dd>
-    <% if @user.first_name || @user.last_name %>
-      <%= "#{ @user.first_name } #{ @user.last_name }".strip %>
-    <% else %>
-      No name provided.
-    <% end %>
-  </dd>
+  <dd><%= @user.full_name %></dd>
 
   <dt>Joined:</dt>
-  <dd><%= @user.created_at.strftime("%A, %B %e") %></dd>
+  <dd><%= @user.joined_at %></dd>
 
   <dt>Password:</dt>
   <dd><%= @user.password %></dd>

@@ -13,20 +13,6 @@ class User < ActiveRecord::Base
 
   default_scope -> { order(:last_name, :first_name) }
 
-  def fullname
-    if first_name.blank? && last_name.blank?
-      'No name provided.'
-    else
-      "#{ first_name } #{ last_name }".strip
-    end
-  end
-
-  def as_json(options = {})
-    json_blob = super
-    json_blob.delete(:email) unless public_email
-    json_blob
-  end
-
   def email_domain
     email.split(/@/).second
   end
