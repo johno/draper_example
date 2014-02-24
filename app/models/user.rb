@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   before_create :setup_analytics
-  before_create :send_welcome_email
-  before_save :send_confirmation_email, if: :email_changed?
+  after_create :send_welcome_email
+  after_save :send_confirmation_email, if: :email_changed?
 
   validates :website, url_format: true
   validates :email, email_format: true, 
